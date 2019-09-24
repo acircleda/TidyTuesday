@@ -4,7 +4,7 @@ library(sf)
 library(janitor)
 
 ##set WD
-setwd("C:/Users/aschmidt/Dropbox (Personal)/Tidy Tuesday/School Diversity")
+setwd("../Tidy Tuesday/School Diversity")
 
 
 ##get school data
