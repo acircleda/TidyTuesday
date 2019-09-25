@@ -26,7 +26,7 @@ hcmap("countries/us/us-all", data = schools,
             floating = TRUE, valueDecimals = 0, valueSuffix = "%") %>%
   hc_tooltip(valueDecimals = 2,
              valueSuffix = "%") %>%
-  hc_title(text = "Diversity in American School Districts",
+  hc_title(text = "Diversity in American School Districts (2017)",
            margin = -5,
            style = list(fontSize = "18pt", useHTML = TRUE)) %>%
   hc_subtitle(text = "The following chart represents the average school district diversity of each state.")
