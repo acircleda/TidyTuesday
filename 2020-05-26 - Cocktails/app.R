@@ -59,7 +59,7 @@ cocktails <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/
 
 ui <- fluidPage(
   h1("The Shiny Bartender's Guide", align = "center"),
-  h4("Become a Shiny Bartender by using this guide to making delicious cocktails written in R/Shiny! This app was inspired by the",
+  h4("Become a Shiny Bartender and make delicious cocktails by using this guide written in R/Shiny! This app was inspired by the",
       a(href='https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-05-26/readme.md', "2020 Week 22 #TidyTuesday dataset.")),
   sidebarLayout(fluid = T,
                 sidebarPanel(
@@ -75,7 +75,9 @@ ui <- fluidPage(
                   htmlOutput("image")
                       )),
                 div("App designed by",
-                    a(href="http://www.anthonyschmidt.co", "Anthony Schmidt"))
+                    a(href="http://www.anthonyschmidt.co", "Anthony Schmidt"), 
+                    "| Code can be found ",
+                    a(href="https://github.com/acircleda/TidyTuesday/tree/master/2020-05-26%20-%20Cocktails", "here"))
 )
 
 ## server----
@@ -89,7 +91,7 @@ server <- function(input, output) {
   })
   
   output$alcohol <- renderText({
-    paste0("This beverage is ", display_dataset()$alcoholic[1], ". It should be served as ", display_dataset()$category[1], " in a ", display_dataset()$glass[1],".")
+    paste0("This beverage is ", display_dataset()$alcoholic[1], ". It should be served as ", display_dataset()$category[1], " in ", display_dataset()$glass[1],".")
   })
   
   output$recipe <- renderTable({
